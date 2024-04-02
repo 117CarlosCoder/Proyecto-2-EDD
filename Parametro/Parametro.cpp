@@ -3,6 +3,10 @@
 //
 
 #include "Parametro.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 Parametro::Parametro() {
     valor="";
@@ -18,3 +22,5 @@ Parametro::~Parametro() {
     delete parametroSig;
     delete parametroAnt;
 }
+
+

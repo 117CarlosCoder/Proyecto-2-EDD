@@ -6,17 +6,18 @@
 #define POYECTO_2_ARBOL_H
 #include <string>
 #include "../Nodos/NodoArbol.h"
+#include "../ListaDoblementeEnlazada/ListaDoblementeEnlazada.h"
+
 using namespace std;
 class NodoGrupo;
 class NodoArbol;
+class Parametro;
 class Arbol {
 private:
     int existenodo;
-public:
     NodoArbol *anterior, *raiz, *recorrern, *PadreABn, *sHijo, *abuelo, *hijoHijo, *nuevon;
-    Arbol();
     int convertirAscii(string valor);
-    void buscarDato(NodoArbol *recorrer, string buscado);
+    Parametro* buscarDato(NodoArbol *recorrer, string buscado, int nuevP);
     void insertarNuevo(NodoArbol *recorrer, NodoArbol *nuevo, NodoArbol *PadreAB);
     void verArbol(NodoArbol *recorrer, int n);
     int altura(NodoArbol *recorrer);
@@ -25,9 +26,13 @@ public:
     void rotarDD();
     void rotarII();
     void necesidadEquilibrar(NodoArbol *recorrer);
+public:
+    Arbol();
     void ingresar( string nuevoDato, NodoGrupo *grupo, string tipo);
-    void buscar(string valor);
+    Parametro* buscar(string valor, int nuevP);
     void imprimir();
+    void graficar();
+    void graficarArbol(NodoArbol *recorrer, int n, ofstream &file);
 };
 
 

@@ -3,7 +3,7 @@ project(Poyecto_2)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Poyecto_2 main.cpp
+add_executable(main.cpp
         Parametro/Parametro.cpp
         Parametro/Parametro.h
         Nodos/NodoGrupo.cpp
@@ -16,6 +16,9 @@ add_executable(Poyecto_2 main.cpp
         Hash/Hash.h
         Arbol/Arbol.cpp
         Arbol/Arbol.h
-        ArbolP/ArboP.cpp
-        ArbolP/ArboP.h
+        ListaDoblementeEnlazada/ListaDoblementeEnlazada.cpp
+        ListaDoblementeEnlazada/ListaDoblementeEnlazada.h
+        Comandos/Comandos.h
+        Comandos/Comandos.cpp
+        main.cpp
 )

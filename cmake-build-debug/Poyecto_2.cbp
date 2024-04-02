@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Poyecto_2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main.cpp">
+				<Option output="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/main.cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.cpp"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main.cpp/fast">
+				<Option output="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/main.cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.cpp/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/carlosl/Documentos/EDD/Proyecto-2-EDD/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Arbol/Arbol.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Arbol/Arbol.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Comandos/Comandos.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Comandos/Comandos.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Hash/Hash.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Hash/Hash.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/ListaDoblementeEnlazada/ListaDoblementeEnlazada.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/ListaDoblementeEnlazada/ListaDoblementeEnlazada.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Nodos/NodoArbol.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Nodos/NodoArbol.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Nodos/NodoGrupo.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Nodos/NodoGrupo.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Nodos/NodoParametro.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Nodos/NodoParametro.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Parametro/Parametro.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/Parametro/Parametro.h">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/main.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/home/carlosl/Documentos/EDD/Proyecto-2-EDD/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

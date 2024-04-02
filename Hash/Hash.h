@@ -11,8 +11,8 @@
 
 class Hash {
 private:
-    NodoGrupo grupo[10];
-    NodoParametro parametro[10];
+    NodoGrupo *grupo[10];
+    NodoParametro *parametro[10];
     int espacioGrupo;
     int espacioParametro;
     int convertirAscii(string valor);
@@ -21,14 +21,12 @@ public:
     NodoParametro claveParametro;
     NodoGrupo claveGrupo;
     int indice;
-
-
     void ingresarGrupo(NodoGrupo *nodoGrupo);
-    void ingresarParametro(NodoParametro *parametro);
+    void ingresarParametro(NodoParametro *parametroNuevo);
     void imprimirGrupo();
     void imprimirParametro();
-
-
+    NodoParametro* buscarParametro(string parametron);
+    NodoGrupo* buscarGrupo(string grupon);
 };
 
 

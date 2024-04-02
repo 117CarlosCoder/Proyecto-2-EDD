@@ -6,9 +6,11 @@
 
 NodoGrupo::NodoGrupo() {
     grupo = "";
-    sig = nullptr;
+    listaDoblementeEnlazada = nullptr;
+    parametros = nullptr;
 }
 
 NodoGrupo::~NodoGrupo() {
-    delete sig;
+    delete listaDoblementeEnlazada;
+    delete parametros;
 }

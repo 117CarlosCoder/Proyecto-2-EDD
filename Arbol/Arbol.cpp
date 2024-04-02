@@ -5,6 +5,7 @@
 #include "Arbol.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 Arbol::Arbol() {
@@ -30,38 +31,43 @@ int Arbol::convertirAscii(string valor) {
     return suma;
 }
 
-void Arbol::buscar(string valor) {
+Parametro* Arbol::buscar(string valor, int cantidadP) {
     recorrern = raiz;
-    buscarDato(recorrern,std::move(valor));
+    return buscarDato(recorrern,std::move(valor), cantidadP);
 }
 
 
-//Si es 0 no existe, y si es 1 si existe.
-void Arbol::buscarDato(NodoArbol *recorrer, string buscado){
+Parametro* Arbol::buscarDato(NodoArbol *recorrer, string buscado, int cantidaP){
     existenodo=0;
     int valosBuscado  = convertirAscii(buscado);
-    cout<<"Ascii buscado "<<valosBuscado<<endl;
-    cout<<"Ascii actual "<<recorrer->valor->valorAscii<<endl;
     if (recorrer==nullptr){
         cout<<"Arbol Vacio o el nodo no existe"<<endl;
     }else{
         if(valosBuscado < recorrer->valor->valorAscii){
             cout<<"buscando ...."<<endl;
-            buscarDato(recorrer->izq, buscado);
+            buscarDato(recorrer->izq, buscado,cantidaP);
         }else if (valosBuscado>recorrer->valor->valorAscii){
             cout<<"buscando ...."<<endl;
-            buscarDato(recorrer->der, buscado);
+            buscarDato(recorrer->der, buscado,cantidaP);
 
         }else if (valosBuscado == recorrer->valor->valorAscii){
             existenodo=1;
             PadreABn=recorrer->padre;
             //ABBcout<<"Padre: "<<PadreAB->dato<<" Nodo buscado: "<<recorrer->dato<<endl;
             cout<<"El nodo SI existe"<<endl;
-            cout<<"Palabra: "<<recorrer->valor->valor<<endl;
-            cout<<"AScii: "<<recorrer->valor->valorAscii<<endl;
+            Parametro* pnuev = new Parametro();
+            for (int i = 0; i < cantidaP; ++i) {
+                pnuev = recorrer->valor;
+                cout<<"Valor: "<<pnuev->valor<<endl;
+                cout<<"Tipo: "<<pnuev->tipo<<endl;
+                cout<<"AScii: "<<pnuev->valorAscii<<endl;
+                pnuev = pnuev->parametroSig;
+            }
             cout<<endl;
+            return recorrer->valor;
         }
     }
+    return nullptr;
 }
 
 
@@ -86,6 +92,7 @@ void Arbol::ingresar(string nuevoDato, NodoGrupo *grupo, string tipo) {
     nuevonn->alturaIzq = 0;
     nuevonn->alturaDer = 0;
     nuevonn->fe = nuevonn->alturaIzq - nuevonn->alturaDer;
+    //grupo->listaDoblementeEnlazada->ingresar(nuevonn->valor);
     nuevon = nuevonn;
     recorrern = raiz;
     PadreABn = raiz;
@@ -98,19 +105,14 @@ void Arbol::ingresar(string nuevoDato, NodoGrupo *grupo, string tipo) {
 }
 
 void Arbol::insertarNuevo(NodoArbol *recorrer, NodoArbol *nuevo, NodoArbol *PadreAB){
-    if (raiz== nullptr){ //Si es el primer nodo entonces la raíz aún será nula porque no existe nada dentro de ella.
-        raiz=nuevo; //Asignar a la raíz el valor del nuevo nodo creado...
+    anterior = recorrer;
+    if (raiz== nullptr){
+        raiz=nuevo;
         raiz->padre=nullptr;
         cout<<"Arbol vacio "<<raiz->valor->valor<<endl;
 
     }else{
-        anterior = recorrer;
-        /*
-        if (anterior->valor.grupo == nuevo->valor.grupo) {
-            anterior->valor.parametroSig = &nuevo->valor;
-        }*/
-        cout<<"Nuevo "<<nuevo->valor->valorAscii<<endl;
-        //cout<<"Anterior "<<recorrer->valor->valorAscii<<endl;
+
         if(nuevo->valor->valorAscii <= recorrer->valor->valorAscii){
             if(recorrer->izq!=nullptr){
                 PadreAB=recorrer->izq;
@@ -159,6 +161,40 @@ void Arbol::verArbol(NodoArbol *recorrer, int n){
     verArbol(recorrer->izq, n+1);
 }
 
+void Arbol::graficar(){
+
+    ofstream file("../Graficos/graph.dot");
+    if (!file.is_open()) {
+        cerr << "Error al abrir el archivo." << endl;
+        return;
+    }
+    file << "digraph G {\n";
+    file << "    node [shape=circle, style=filled, fillcolor=lightblue, fontcolor=black];\n";
+    graficarArbol(recorrern,0,file);
+    file << "}\n";
+    file.close();
+    string comando = "dot -Tpng ../Graficos/graph.dot -o ../Graficos/" + recorrern->valor->valor + ".png";
+    system(comando.c_str());
+
+    cout << "Gráfico generado correctamente." << endl;
+}
+
+void Arbol::graficarArbol(NodoArbol *recorrer, int n, ofstream& file){
+    if(recorrer == nullptr)
+        return;
+
+    file << "    " << recorrer->valor->valor  << " [label=\"" << recorrer->valor->valor  << "\"];\n";
+
+    graficarArbol(recorrer->izq, n + 1, file);
+
+    graficarArbol(recorrer->der, n + 1, file);
+
+    if(recorrer->izq != nullptr)
+        file << "    " << recorrer->valor->valor  << " -> " << recorrer->izq->valor->valor << ";\n";
+    if(recorrer->der != nullptr)
+        file << "    " << recorrer->valor->valor  << " -> " << recorrer->der->valor->valor << ";\n";
+}
+
 int Arbol::altura(NodoArbol *recorrer){
     if (recorrer == nullptr)
         return 0 ;
@@ -174,13 +210,12 @@ int Arbol::altura(NodoArbol *recorrer){
     }
 }
 
-//Rotación Derecha Izquierda
 void Arbol::rotarDI(){
     if (PadreABn==raiz){
 
-        hijoHijo=sHijo->izq; //Ubico al hijo del hijo...
+        hijoHijo=sHijo->izq;
 
-        raiz=hijoHijo; //Cambiar el apuntador de la raíz.
+        raiz=hijoHijo;
 
         hijoHijo->padre=nullptr; //Aseguro que el padre de la raíz se quede en nullptr
 
@@ -290,10 +325,6 @@ void Arbol::rotarDD(){
     if (PadreABn==raiz){
         raiz=sHijo;
 
-        //sHijo->dere=hijoHijo;
-        //hijoHijo->padre=sHijo;
-        //hijoHijo->dere=nullptr;
-
         sHijo->izq=PadreABn;
         PadreABn->padre=sHijo;
         PadreABn->der=nullptr;
@@ -323,12 +354,6 @@ void Arbol::rotarII(){
         PadreABn->padre=sHijo;
 
         sHijo->padre=nullptr;
-
-        //PadreAB->dere=hijoHijo;
-        //hijoHijo->padre=PadreAB;
-
-        //sHijo->dere=PadreAB;
-
 
     }else{
         abuelo=PadreABn->padre;

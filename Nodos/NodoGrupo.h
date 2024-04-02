@@ -5,13 +5,15 @@
 #ifndef POYECTO_2_NODOGRUPO_H
 #define POYECTO_2_NODOGRUPO_H
 #include <string>
-#include "NodoParametro.h"
+#include "../ListaDoblementeEnlazada/ListaDoblementeEnlazada.h"
+
 using namespace std;
-class NodoParametro;
+class ListaDoblementeEnlazada;
 class NodoGrupo {
 public:
     string grupo;
-    NodoParametro *sig;
+    ListaDoblementeEnlazada *parametros;
+    ListaDoblementeEnlazada *listaDoblementeEnlazada;
     NodoGrupo();
     ~NodoGrupo();
 };
