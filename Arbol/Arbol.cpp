@@ -217,53 +217,52 @@ void Arbol::rotarDI(){
 
         raiz=hijoHijo;
 
-        hijoHijo->padre=nullptr; //Aseguro que el padre de la raíz se quede en nullptr
+        hijoHijo->padre=nullptr;
 
-        hijoHijo->der=sHijo; // el nuevo padre debe apuntar al hijo izquierdo.
-        sHijo->padre=hijoHijo; //El hijo debe apuntar a su nuevo padre.
+        hijoHijo->der=sHijo;
+        sHijo->padre=hijoHijo;
         if(sHijo->izq!=nullptr){
             sHijo->izq=hijoHijo->izq;
         }else{
-            sHijo->izq=nullptr; //Apuntar a nullptr la parte izquierda del hijo, ya que ahora no tendrá hijos...
+            sHijo->izq=nullptr;
         }
 
-        //sHijo->dere=nullptr; // Apuntar a nullptr la parte derecha del hijo, ya que ahora no tendrá Hijos...
 
-        hijoHijo->izq=PadreABn; //El nuevo padre debe apuntar al hijo derecho.
+
+        hijoHijo->izq=PadreABn;
 
         if(PadreABn->izq==nullptr){
-            PadreABn->izq=nullptr; //El antiguo padre debe apuntar ahora a nu
+            PadreABn->izq=nullptr;
         }
 
-        PadreABn->der=nullptr; //el antiguo padre debe apuntar ahora a nullptr
-        PadreABn->padre=hijoHijo; //Apuntar al nuevo padre ...
+        PadreABn->der=nullptr;
+        PadreABn->padre=hijoHijo;
     }else{
 
         abuelo=PadreABn->padre;
 
-        hijoHijo=sHijo->izq; //Ubico al hijo del hijo...
+        hijoHijo=sHijo->izq;
 
-        hijoHijo->padre=abuelo; //Aseguro que el padre de la raíz se quede apuntando al abuelo
+        hijoHijo->padre=abuelo;
 
-        hijoHijo->der=sHijo; // el nuevo padre debe apuntar al hijo izquierdo.
-        sHijo->padre=hijoHijo; //El hijo debe apuntar a su nuevo padre.
+        hijoHijo->der=sHijo;
+        sHijo->padre=hijoHijo;
 
         if(sHijo->izq!=nullptr){
             sHijo->izq=hijoHijo->izq;
         }else{
-            sHijo->izq=nullptr; //Apuntar a nullptr la parte izquierda del hijo, ya que ahora no tendrá hijos...
+            sHijo->izq=nullptr;
         }
 
-        //sHijo->dere=nullptr; // Apuntar a nullptr la parte derecha del hijo, ya que ahora no tendrá Hijos...
 
-        hijoHijo->izq=PadreABn; //El nuevo padre debe apuntar al hijo derecho.
+        hijoHijo->izq=PadreABn;
 
         if(PadreABn->izq==nullptr){
-            PadreABn->izq=nullptr; //El antiguo padre debe apuntar ahora a nu
+            PadreABn->izq=nullptr;
         }
 
-        PadreABn->der=nullptr; //el antiguo padre debe apuntar ahora a nullptr
-        PadreABn->padre=hijoHijo; //Apuntar al nuevo padre ...
+        PadreABn->der=nullptr;
+        PadreABn->padre=hijoHijo;
 
         abuelo->der=hijoHijo;
     }
@@ -274,53 +273,51 @@ void Arbol::rotarDI(){
 void Arbol::rotarID(){
     if (PadreABn==raiz){
 
-        hijoHijo=sHijo->der; //Ubico al hijo del hijo...
+        hijoHijo=sHijo->der;
 
-        raiz=hijoHijo; //Cambiar el apuntador de la raíz.
+        raiz=hijoHijo;
 
-        hijoHijo->padre=nullptr; //Aseguro que el padre de la raíz se quede en nullptr
+        hijoHijo->padre=nullptr;
 
-        hijoHijo->izq=sHijo; // el nuevo padre debe apuntar al hijo izquierdo.
-        sHijo->padre=hijoHijo; //El hijo debe apuntar a su nuevo padre.
+        hijoHijo->izq=sHijo;
+        sHijo->padre=hijoHijo;
+        sHijo->der=nullptr;
 
-        sHijo->der=nullptr; //Apuntar a nullptr la parte izquierda del hijo, ya que ahora no tendrá hijos...
+        PadreABn->izq=nullptr;
 
-        PadreABn->izq=nullptr; //El antiguo padre debe apuntar ahora a nullptr
-
-        hijoHijo->der=PadreABn; //El nuevo padre debe apuntar al hijo derecho.
+        hijoHijo->der=PadreABn;
 
 
         if(PadreABn->der==nullptr){
-            PadreABn->der=nullptr; //El antiguo padre debe apuntar ahora a nu
+            PadreABn->der=nullptr;
         }
-        PadreABn->padre=hijoHijo; //Apuntar al nuevo padre ...
+        PadreABn->padre=hijoHijo;
     }else{
 
         abuelo=PadreABn->padre;
 
-        hijoHijo=sHijo->der; //Ubico al hijo del hijo...
+        hijoHijo=sHijo->der;
 
-        hijoHijo->padre=abuelo; //Aseguro que el padre de la raíz se quede apuntando al abuelo
+        hijoHijo->padre=abuelo;
         abuelo->izq=hijoHijo;
 
-        hijoHijo->izq=sHijo; // el nuevo padre debe apuntar al hijo izquierdo.
-        sHijo->padre=hijoHijo; //El hijo debe apuntar a su nuevo padre.
+        hijoHijo->izq=sHijo;
+        sHijo->padre=hijoHijo;
 
-        sHijo->der=nullptr; //Apuntar a nullptr la parte izquierda del hijo, ya que ahora no tendrá hijos...
+        sHijo->der=nullptr;
 
 
-        hijoHijo->der=PadreABn; //El nuevo padre debe apuntar al hijo derecho.
+        hijoHijo->der=PadreABn;
 
-        PadreABn->izq=nullptr; //El antiguo padre debe apuntar ahora a nullptr
+        PadreABn->izq=nullptr;
 
         if(PadreABn->der==nullptr){
-            PadreABn->der=nullptr; //El antiguo padre debe apuntar ahora a nu
+            PadreABn->der=nullptr;
         }
-        PadreABn->padre=hijoHijo; //Apuntar al nuevo padre ...
+        PadreABn->padre=hijoHijo;
     }
 }
 
-//Rotación  Derecha Derecha
 void Arbol::rotarDD(){
     if (PadreABn==raiz){
         raiz=sHijo;
@@ -341,8 +338,6 @@ void Arbol::rotarDD(){
     }
 }
 
-
-//Rotación  Izquierda Izquierda
 void Arbol::rotarII(){
     if(PadreABn==raiz){
         raiz=sHijo;
@@ -378,14 +373,12 @@ void Arbol::necesidadEquilibrar(NodoArbol *recorrer){
             PadreABn=recorrer;
             sHijo=PadreABn->der;
 
-            //Identificar Si es el caso  RDD, Rotación Derecha, Derecha.
             if ((PadreABn->fe>1)&&(sHijo->fe>0)){
                 cout<<"Rotacion derecha derecha."<<endl;
                 cout<<" Padre: "<<PadreABn->valor->valor<<" Hijo: "<<sHijo->valor->valor<<endl;
                 rotarDD();
                 altura(raiz);
                 return;
-                //Identificar Si es el caso  RDI, Rotación Derecha, Izquierda.
             }else if((PadreABn->fe>1)&&(sHijo->fe<0)){
                 cout<<"Rotacion derecha izquierda."<<endl;
                 cout<<" Padre: "<<PadreABn->valor->valor<<" Hijo: "<<sHijo->valor->valor<<endl;
@@ -396,15 +389,12 @@ void Arbol::necesidadEquilibrar(NodoArbol *recorrer){
 
                 PadreABn=recorrer;
                 sHijo=PadreABn->izq;
-
-                //Identificar Si es el caso  RII, Rotación Izquierda, Izquierda.
                 if((PadreABn->fe<-1)&&(sHijo->fe<0)){
                     cout<<"Rotacion izquierda izquierda."<<endl;
                     cout<<" Padre: "<<PadreABn->valor->valor<<" Hijo: "<<sHijo->valor->valor<<endl;
                     rotarII();
                     altura(raiz);
                     return;
-                    //Identificar Si es el caso  RID, Rotación Izquierda, Derecha.
                 }else if((PadreABn->fe<-1)&&(sHijo->fe>0)){
                     cout<<"Rotacion izquierda Derecha."<<endl;
                     cout<<" Padre: "<<PadreABn->valor->valor<<" Hijo: "<<sHijo->valor->valor<<endl;
